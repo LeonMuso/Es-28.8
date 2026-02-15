@@ -91,9 +91,12 @@ public class GestionaleNoleggi
         float totale = 0;
         foreach (Noleggio noleggio in Noleggi)
         {
-            if (noleggio is Auto)
+            foreach (Veicolo veicolo in Veicoli)
             {
-                totale += noleggio.Costo;
+                if (veicolo is Auto)
+                {
+                    totale += noleggio.Costo;
+                }
             }
         }
         return totale;
