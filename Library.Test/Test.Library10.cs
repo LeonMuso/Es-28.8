@@ -19,7 +19,7 @@ namespace Library.Test
             {
                 Targa = "AB123CD",
                 Modello = "Fiat Panda",
-                TargiifaGiornaliera = 30.0f,
+                TariffaGiornaliera = 30.0f,
                 Posti = 5
             };
 
@@ -62,7 +62,7 @@ namespace Library.Test
             {
                 Targa = "AB123CD",
                 Modello = "Fiat Panda",
-                TargiifaGiornaliera = 30.0f,
+                TariffaGiornaliera = 30.0f,
                 Posti = 5
             };
             Cliente cliente = new()
@@ -101,7 +101,7 @@ namespace Library.Test
             {
                 Targa = "AA111AA",
                 Modello = "Panda",
-                TargiifaGiornaliera = 20,
+                TariffaGiornaliera = 20,
                 Posti = 5
             };
 
@@ -111,9 +111,16 @@ namespace Library.Test
                 Cognome = "Verdi",
                 CodiceFiscale = "LGVRD"
             };
+            Cliente t = new()
+            {
+                Nome = "Bobi",
+                Cognome = "Check",
+                CodiceFiscale = "BBOCK"
+            };
 
             gestionale.Veicoli.Add(a);
             gestionale.Clienti.Add(c);
+            gestionale.Clienti.Add(t);
 
             Noleggio n = new()
             {
@@ -123,12 +130,21 @@ namespace Library.Test
                 DataInizio = DateTime.Today,
                 NumeroGiorni = 3
             };
+            Noleggio n2 = new()
+            {
+                ID = 2,
+                Veicolo = a,
+                Cliente = t,
+                DataInizio = DateTime.Today,
+                NumeroGiorni = 3 
+            };
 
             gestionale.Noleggi.Add(n);
+            gestionale.Noleggi.Add(n2);
 
             float totale = gestionale.PrezzoTotaleNoleggio("AA111AA");
-
-            Assert.AreEqual(0, totale); //non va anche se sarebbe 60
+            
+            Assert.AreEqual(120, totale); 
         }
 
         [TestMethod]
@@ -145,7 +161,7 @@ namespace Library.Test
             {
                 Targa = "BB222BB",
                 Modello = "Yaris",
-                TargiifaGiornaliera = 40,
+                TariffaGiornaliera = 40,
                 Posti = 5
             };
 
@@ -188,7 +204,7 @@ namespace Library.Test
             {
                 Targa = "CC333CC",
                 Modello = "Clio",
-                TargiifaGiornaliera = 35,
+                TariffaGiornaliera = 35,
                 Posti = 5
             };
 
@@ -211,7 +227,7 @@ namespace Library.Test
             {
                 Targa = "AA111AA",
                 Modello = "Panda",
-                TargiifaGiornaliera = 20,
+                TariffaGiornaliera = 20,
                 Posti = 5
             };
 
@@ -219,7 +235,7 @@ namespace Library.Test
             {
                 Targa = "BB222BB",
                 Modello = "Yaris",
-                TargiifaGiornaliera = 40,
+                TariffaGiornaliera = 40,
                 Posti = 5
             };
 
@@ -257,7 +273,7 @@ namespace Library.Test
 
             float totale = gestionale.PrezzoTotaleNoleggioPerCliente("MRARSS");
 
-            Assert.AreEqual(0, totale); //stesso errore...
+            Assert.AreEqual(160, totale);
         }
         [TestMethod]
         public void Test_RicercaNoleggioPerID()
@@ -273,7 +289,7 @@ namespace Library.Test
             {
                 Targa = "ID123",
                 Modello = "Opel",
-                TargiifaGiornaliera = 30,
+                TariffaGiornaliera = 30,
                 Posti = 5
             };
 

@@ -60,7 +60,7 @@ namespace Es_28._8
                             {
                                 Console.WriteLine("errore");
                             }
-                            auto.TargiifaGiornaliera = tariffa;
+                            auto.TariffaGiornaliera = tariffa;
                             Console.WriteLine("inserisci i posti:");
                             int posti;
                             while (!int.TryParse(Console.ReadLine(), out posti))
@@ -83,7 +83,7 @@ namespace Es_28._8
                             {
                                 Console.WriteLine("errore");
                             }
-                            furgone.TargiifaGiornaliera = tariffa;
+                            furgone.TariffaGiornaliera = tariffa;
                             Console.WriteLine("inserisci il carico:");
                             float carico;
                             while (!float.TryParse(Console.ReadLine(), out carico))

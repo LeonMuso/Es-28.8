@@ -4,11 +4,11 @@
     {
         public string Targa { get; set; }
         public string Modello { get; set; }
-        public float TargiifaGiornaliera { get; set; }
+        public float TariffaGiornaliera { get; set; }
 
         public override string ToString()
         {
-            return $"Veicolo: {Modello}, Targa: {Targa}, Tariffa Giornaliera: {TargiifaGiornaliera} ";
+            return $"Veicolo: {Modello}, Targa: {Targa}, Tariffa Giornaliera: {TariffaGiornaliera} ";
         }
 
     }

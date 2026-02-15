@@ -1,4 +1,6 @@
-﻿namespace _28._8.Library;
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace _28._8.Library;
 
 public class GestionaleNoleggi
 {
@@ -50,18 +52,21 @@ public class GestionaleNoleggi
 
     public void AggiungiNoleggio(Noleggio noleggio)
     {
-        noleggio.Costo = noleggio.NumeroGiorni * noleggio.Veicolo.TargiifaGiornaliera;
+        noleggio.Costo = noleggio.NumeroGiorni * noleggio.Veicolo.TariffaGiornaliera;
         Noleggi.Add(noleggio);
     }
 
     public float PrezzoTotaleNoleggio(string targa)
     {
         float totale = 0;
+        float tempT = 0;
         foreach (Noleggio noleggio in Noleggi)
         {
             if (noleggio.Veicolo.Targa == targa)
             {
-                totale += noleggio.Costo;
+                tempT = (tempT + noleggio.Veicolo.TariffaGiornaliera) * noleggio.NumeroGiorni;
+                totale += tempT;
+                tempT = 0;
             }
         }
         return totale;
@@ -70,11 +75,15 @@ public class GestionaleNoleggi
     public float PrezzoTotaleNoleggioPerCliente(string codiceFiscale)
     {
         float totale = 0;
+        float tempT = 0;
         foreach (Noleggio noleggio in Noleggi)
         {
+            
             if (noleggio.Cliente != null && noleggio.Cliente.CodiceFiscale.Contains(codiceFiscale))
             {
-                totale += noleggio.Costo;
+                tempT = (tempT + noleggio.Veicolo.TariffaGiornaliera) * noleggio.NumeroGiorni;
+                totale += tempT;
+                tempT = 0;
             }
         }
         return totale;
