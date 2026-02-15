@@ -159,7 +159,6 @@ namespace _28._8.Winform
             MessageBox.Show("Ricavo totale:\n" + totale + " €");
         }
 
-
         private void AggiornaLista()
         {
             lstNoleggi.Items.Clear();
@@ -179,24 +178,6 @@ namespace _28._8.Winform
             cmbClienti.Items.Clear();
             foreach (Cliente c in gestionale.Clienti)
                 cmbClienti.Items.Add(c);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstNoleggi_DoubleClick(object sender, EventArgs e)
-        {
-            if (lstNoleggi.SelectedItem == null)
-            {
-                MessageBox.Show("Seleziona un noleggio");
-                return;
-            }
-            else
-            {
-                MessageBox.Show(gestionale.VisualizzaDettagliNoleggioConID(((Noleggio)lstNoleggi.SelectedItem).ID).ToString());
-            }
         }
 
         private void cmbTipoVeicolo_SelectedIndexChanged(object sender, EventArgs e)

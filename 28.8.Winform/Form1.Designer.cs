@@ -199,7 +199,6 @@
             lstNoleggi.Name = "lstNoleggi";
             lstNoleggi.Size = new Size(1032, 154);
             lstNoleggi.TabIndex = 16;
-            lstNoleggi.DoubleClick += lstNoleggi_DoubleClick;
             // 
             // btnTotlCliente
             // 
@@ -224,7 +223,7 @@
             // lblTarga
             // 
             lblTarga.AutoSize = true;
-            lblTarga.Location = new Point(202, 53);
+            lblTarga.Location = new Point(191, 53);
             lblTarga.Name = "lblTarga";
             lblTarga.Size = new Size(36, 15);
             lblTarga.TabIndex = 19;
@@ -233,7 +232,7 @@
             // lblModello
             // 
             lblModello.AutoSize = true;
-            lblModello.Location = new Point(202, 86);
+            lblModello.Location = new Point(191, 86);
             lblModello.Name = "lblModello";
             lblModello.Size = new Size(51, 15);
             lblModello.TabIndex = 20;
@@ -242,7 +241,7 @@
             // lblTariffa
             // 
             lblTariffa.AutoSize = true;
-            lblTariffa.Location = new Point(202, 119);
+            lblTariffa.Location = new Point(191, 119);
             lblTariffa.Name = "lblTariffa";
             lblTariffa.Size = new Size(40, 15);
             lblTariffa.TabIndex = 21;
@@ -251,7 +250,7 @@
             // lblPostiCarico
             // 
             lblPostiCarico.AutoSize = true;
-            lblPostiCarico.Location = new Point(202, 152);
+            lblPostiCarico.Location = new Point(191, 152);
             lblPostiCarico.Name = "lblPostiCarico";
             lblPostiCarico.Size = new Size(33, 15);
             lblPostiCarico.TabIndex = 22;
@@ -260,7 +259,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(521, 24);
+            lblNome.Location = new Point(507, 24);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 24;
@@ -269,7 +268,7 @@
             // lblCognome
             // 
             lblCognome.AutoSize = true;
-            lblCognome.Location = new Point(520, 58);
+            lblCognome.Location = new Point(507, 58);
             lblCognome.Name = "lblCognome";
             lblCognome.Size = new Size(60, 15);
             lblCognome.TabIndex = 25;
@@ -278,7 +277,7 @@
             // lblCF
             // 
             lblCF.AutoSize = true;
-            lblCF.Location = new Point(520, 95);
+            lblCF.Location = new Point(507, 96);
             lblCF.Name = "lblCF";
             lblCF.Size = new Size(82, 15);
             lblCF.TabIndex = 26;
@@ -314,7 +313,7 @@
             // lblTipoVeicolo
             // 
             lblTipoVeicolo.AutoSize = true;
-            lblTipoVeicolo.Location = new Point(202, 24);
+            lblTipoVeicolo.Location = new Point(191, 24);
             lblTipoVeicolo.Name = "lblTipoVeicolo";
             lblTipoVeicolo.Size = new Size(91, 15);
             lblTipoVeicolo.TabIndex = 30;
@@ -354,7 +353,6 @@
             Controls.Add(lstNoleggi);
             Name = "Form1";
             Text = "Gestione Noleggi";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numGiorni).EndInit();
             ResumeLayout(false);
             PerformLayout();
