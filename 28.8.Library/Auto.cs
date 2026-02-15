@@ -5,6 +5,6 @@ public class Auto : Veicolo
     public int Posti { get; set; }
     public override string ToString()
     {
-        return base.ToString() + $", Posti: {Posti} ";
+        return "Auto:" + base.ToString() + $", Posti: {Posti} ";
     }
 }

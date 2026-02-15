@@ -8,7 +8,7 @@
 
         public override string ToString()
         {
-            return $"Veicolo: {Modello}, Targa: {Targa}, Tariffa Giornaliera: {TariffaGiornaliera} ";
+            return $" {Modello}, Targa: {Targa}, Tariffa Giornaliera: {TariffaGiornaliera} ";
         }
 
     }

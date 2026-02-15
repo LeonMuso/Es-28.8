@@ -6,6 +6,6 @@ public class Furgone : Veicolo
 
     public override string ToString()
     {
-        return base.ToString() + $", CaricoInKg: {CaricoInKg} ";
+        return "Furgone:" + base.ToString() + $", CaricoInKg: {CaricoInKg} ";
     }
 }
