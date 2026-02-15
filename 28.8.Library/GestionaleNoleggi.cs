@@ -59,14 +59,13 @@ public class GestionaleNoleggi
     public float PrezzoTotaleNoleggio(string targa)
     {
         float totale = 0;
-        float tempT = 0;
         foreach (Noleggio noleggio in Noleggi)
         {
+            float tempT = 0;
             if (noleggio.Veicolo.Targa == targa)
             {
                 tempT = (tempT + noleggio.Veicolo.TariffaGiornaliera) * noleggio.NumeroGiorni;
                 totale += tempT;
-                tempT = 0;
             }
         }
         return totale;
@@ -75,15 +74,13 @@ public class GestionaleNoleggi
     public float PrezzoTotaleNoleggioPerCliente(string codiceFiscale)
     {
         float totale = 0;
-        float tempT = 0;
         foreach (Noleggio noleggio in Noleggi)
         {
-            
+            float tempT = 0;
             if (noleggio.Cliente != null && noleggio.Cliente.CodiceFiscale.Contains(codiceFiscale))
             {
                 tempT = (tempT + noleggio.Veicolo.TariffaGiornaliera) * noleggio.NumeroGiorni;
                 totale += tempT;
-                tempT = 0;
             }
         }
         return totale;
